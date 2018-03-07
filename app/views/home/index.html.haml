@@ -1,0 +1,16 @@
+.align-self-center.welcome
+  %h1 Welcome to Atlas Web!
+
+= form_tag(interactions_path, method: :post, class: 'phone_form') do |f|
+  = label_tag :first_name, 'First Name*', class: 'col-sm-12 col-form-label col-form-label-lg'
+  = text_field_tag :first_name, params[:first_name], class: 'form-control form-control-lg'
+
+  = label_tag :last_name, 'Last Name*', class: 'col-sm-12 col-form-label col-form-label-lg'
+  = text_field_tag :last_name, params[:last_name], class: 'form-control form-control-lg'
+
+  = label_tag :phone, "Enter phone number (format: +11234567890)*", class: 'col-sm-12 col-form-label col-form-label-lg'
+  = text_field_tag :phone, params[:phone], pattern: "+1{10}", class: 'form-control form-control-lg'
+  .button
+    = submit_tag 'Join', name: :flow_type, class: 'btn btn-outline-primary btn-lg btn-block'
+  .button
+    = submit_tag 'Visit', name: :flow_type, class: 'btn btn-outline-dark btn-lg btn-block'

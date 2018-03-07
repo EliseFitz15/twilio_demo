@@ -1,0 +1,21 @@
+.login-container {
+  align-items: center;
+  background-color: $color-neutral;
+  border: 1px solid $color-neutral;
+  border-radius: .25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  width: 100%;
+
+  form {
+    margin-top: 2rem;
+    width: 50%;
+  }
+
+  h2 {
+    height: 2rem;
+    margin-top: 2rem;
+  }
+}

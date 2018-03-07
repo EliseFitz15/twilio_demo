@@ -1,0 +1,14 @@
+.row.contents
+  .col-sm-12
+    %h2{class: 'text-center'}= "#{@interaction.interaction_type} #{@interaction.flow_type} Conversation with #{@interaction.member.first_name}"
+.row
+  .col-sm-12.conversation-container
+    .conversation
+      - @interaction.conversation.keys.each do |key|
+        - message =   @interaction.conversation[key]
+        - classes = "bubble #{message['from']==ENV['TWILIO_NUMBER'] ? 'ours' : 'theirs'}"
+        %div{class: classes}
+          - date_time = message['datetime'].to_datetime.in_time_zone('Eastern Time (US & Canada)')
+          .message-date= date_time.strftime('%m/%d/%y %H:%M:%S')
+          .bubble-text
+            =message["body"].strip

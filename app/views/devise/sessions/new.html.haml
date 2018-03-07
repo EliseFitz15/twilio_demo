@@ -1,0 +1,15 @@
+.login-container
+  %h2 Login to Your Account</h2>
+  =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      =f.email_field :email, autofocus: true, class: 'form-control', placeholder:'Email'
+
+    .form-group
+      =f.password_field :password,  autocomplete: 'off', class: 'form-control', placeholder:'Password'
+
+    .form-check
+      %label.form-check-label
+        = f.check_box :remember_me, class: 'form-check-input'
+        Remember Me
+    .form-group
+      =f.submit "LOG IN", class: 'btn btn-primary btn-lg btn-block'

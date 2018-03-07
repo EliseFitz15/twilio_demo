@@ -1,0 +1,59 @@
+@mixin flex-col-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex-col-left {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+.contents {
+  @include flex-col-center;
+  margin: 20px 0;
+}
+
+.conversation-container {
+  @include flex-col-center;
+  width: 400px;
+}
+
+.conversation {
+  @include flex-col-center;
+}
+
+.bubble {
+  @include flex-col-left;
+  align-self: flex-end;
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+  max-width: 400px;
+  min-height: 30px;
+  min-width: 60px;
+  padding: 10px;
+
+  &.ours {
+    background-color: $sms-ours;
+  }
+
+  &.theirs {
+    background-color: $sms-theirs;
+  }
+}
+
+.bubble-text {
+  text-align: left;
+}
+
+.message-date {
+  font-size: 10px;
+  margin-top: 5px;
+  text-align: left;
+}
+
